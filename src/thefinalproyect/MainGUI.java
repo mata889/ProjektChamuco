@@ -5,6 +5,8 @@
  */
 package thefinalproyect;
 
+import java.io.File;
+
 /**
  *
  * @author dam_9
@@ -38,9 +40,9 @@ public class MainGUI extends javax.swing.JFrame {
         LSalida1 = new javax.swing.JLabel();
         PanelCambio = new javax.swing.JPanel();
         Archivo = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        bt_CrearArchivo = new javax.swing.JButton();
         Campos = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        bt_CrearCampo = new javax.swing.JButton();
         Registros = new javax.swing.JPanel();
         Indices = new javax.swing.JPanel();
         Estandar = new javax.swing.JPanel();
@@ -178,10 +180,15 @@ public class MainGUI extends javax.swing.JFrame {
         Archivo.setBackground(new java.awt.Color(0, 153, 204));
         Archivo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Crear Archivo");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_CrearArchivo.setText("Crear Archivo");
+        bt_CrearArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                bt_CrearArchivoMouseClicked(evt);
+            }
+        });
+        bt_CrearArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_CrearArchivoActionPerformed(evt);
             }
         });
 
@@ -191,14 +198,14 @@ public class MainGUI extends javax.swing.JFrame {
             ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ArchivoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(611, Short.MAX_VALUE))
         );
         ArchivoLayout.setVerticalGroup(
             ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ArchivoLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(644, Short.MAX_VALUE))
         );
 
@@ -206,10 +213,10 @@ public class MainGUI extends javax.swing.JFrame {
 
         Campos.setBackground(new java.awt.Color(0, 153, 204));
 
-        jButton2.setText("CrearCampos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bt_CrearCampo.setText("CrearCampos");
+        bt_CrearCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bt_CrearCampoActionPerformed(evt);
             }
         });
 
@@ -219,15 +226,15 @@ public class MainGUI extends javax.swing.JFrame {
             CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CamposLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
-                .addComponent(jButton2)
-                .addContainerGap(728, Short.MAX_VALUE))
+                .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(532, Short.MAX_VALUE))
         );
         CamposLayout.setVerticalGroup(
             CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CamposLayout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addComponent(jButton2)
-                .addContainerGap(674, Short.MAX_VALUE))
+                .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(622, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Campos, "card2");
@@ -308,27 +315,27 @@ public class MainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LArchivoMouseClicked
-       PanelCambio.removeAll();
-       PanelCambio.repaint();
-       PanelCambio.revalidate();
-       
-       PanelCambio.add(Archivo);
-       PanelCambio.repaint();
-       PanelCambio.revalidate();
+        PanelCambio.removeAll();
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+
+        PanelCambio.add(Archivo);
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
     }//GEN-LAST:event_LArchivoMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bt_CrearCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CrearCampoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bt_CrearCampoActionPerformed
 
     private void LCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCamposMouseClicked
-     PanelCambio.removeAll();
-       PanelCambio.repaint();
-       PanelCambio.revalidate();
-       
-       PanelCambio.add(Campos);
-       PanelCambio.repaint();
-       PanelCambio.revalidate();
+        PanelCambio.removeAll();
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+
+        PanelCambio.add(Campos);
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
     }//GEN-LAST:event_LCamposMouseClicked
 
     private void LSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalidaMouseClicked
@@ -336,16 +343,20 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LSalidaMouseClicked
 
     private void LSalida1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalida1MouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_LSalida1MouseClicked
 
     private void LSalida1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalida1MousePressed
-      System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_LSalida1MousePressed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void bt_CrearArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearArchivoMouseClicked
         
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_bt_CrearArchivoMouseClicked
+
+    private void bt_CrearArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CrearArchivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_CrearArchivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -397,8 +408,9 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JPanel PanelCambio;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel Registros;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton bt_CrearArchivo;
+    private javax.swing.JButton bt_CrearCampo;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+    File ArchivoActual;
 }
