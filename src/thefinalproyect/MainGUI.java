@@ -27,136 +27,325 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelPrincipal = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        LArchivo = new javax.swing.JLabel();
+        LCampos = new javax.swing.JLabel();
+        LRegistros = new javax.swing.JLabel();
+        LIndices = new javax.swing.JLabel();
+        LSalida = new javax.swing.JLabel();
+        LEstandarizacion = new javax.swing.JLabel();
+        LSalida1 = new javax.swing.JLabel();
         PanelCambio = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
+        Archivo = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        Campos = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        Registros = new javax.swing.JPanel();
+        Indices = new javax.swing.JPanel();
+        Estandar = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ProyectoEDDII");
+        setUndecorated(true);
 
-        PanelCambio.setAutoscrolls(true);
+        PanelPrincipal.setBackground(new java.awt.Color(0, 153, 153));
+        PanelPrincipal.setForeground(new java.awt.Color(0, 153, 153));
+        PanelPrincipal.setAutoscrolls(true);
 
-        javax.swing.GroupLayout PanelCambioLayout = new javax.swing.GroupLayout(PanelCambio);
-        PanelCambio.setLayout(PanelCambioLayout);
-        PanelCambioLayout.setHorizontalGroup(
-            PanelCambioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 701, Short.MAX_VALUE)
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+
+        LArchivo.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LArchivo.setForeground(new java.awt.Color(255, 255, 255));
+        LArchivo.setText("\t\tArchivo");
+        LArchivo.setToolTipText("");
+        LArchivo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LArchivo.setMaximumSize(new java.awt.Dimension(100, 100));
+        LArchivo.setMinimumSize(new java.awt.Dimension(100, 100));
+        LArchivo.setPreferredSize(new java.awt.Dimension(100, 100));
+        LArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LArchivoMouseClicked(evt);
+            }
+        });
+
+        LCampos.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LCampos.setForeground(new java.awt.Color(255, 255, 255));
+        LCampos.setText("Campos");
+        LCampos.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LCampos.setMaximumSize(new java.awt.Dimension(100, 100));
+        LCampos.setMinimumSize(new java.awt.Dimension(100, 100));
+        LCampos.setPreferredSize(new java.awt.Dimension(100, 100));
+        LCampos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LCamposMouseClicked(evt);
+            }
+        });
+
+        LRegistros.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LRegistros.setForeground(new java.awt.Color(255, 255, 255));
+        LRegistros.setText("Registros");
+        LRegistros.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LRegistros.setMaximumSize(new java.awt.Dimension(100, 100));
+        LRegistros.setMinimumSize(new java.awt.Dimension(100, 100));
+        LRegistros.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        LIndices.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LIndices.setForeground(new java.awt.Color(255, 255, 255));
+        LIndices.setText("Indices");
+        LIndices.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LIndices.setMaximumSize(new java.awt.Dimension(100, 100));
+        LIndices.setMinimumSize(new java.awt.Dimension(100, 100));
+        LIndices.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        LSalida.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        LSalida.setForeground(new java.awt.Color(255, 255, 255));
+        LSalida.setText("<html>DiegoMatamoros 11641131<br/>RicardoSanchez 11641051</html>");
+        LSalida.setMaximumSize(new java.awt.Dimension(100, 100));
+        LSalida.setMinimumSize(new java.awt.Dimension(100, 100));
+        LSalida.setPreferredSize(new java.awt.Dimension(100, 100));
+        LSalida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LSalidaMouseClicked(evt);
+            }
+        });
+
+        LEstandarizacion.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LEstandarizacion.setForeground(new java.awt.Color(255, 255, 255));
+        LEstandarizacion.setText("Estandarizacion");
+        LEstandarizacion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LEstandarizacion.setMaximumSize(new java.awt.Dimension(100, 100));
+        LEstandarizacion.setMinimumSize(new java.awt.Dimension(100, 100));
+        LEstandarizacion.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        LSalida1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LSalida1.setForeground(new java.awt.Color(255, 255, 255));
+        LSalida1.setText("Salida");
+        LSalida1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LSalida1.setMaximumSize(new java.awt.Dimension(100, 100));
+        LSalida1.setMinimumSize(new java.awt.Dimension(100, 100));
+        LSalida1.setPreferredSize(new java.awt.Dimension(100, 100));
+        LSalida1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LSalida1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                LSalida1MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LIndices, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LSalida1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(LEstandarizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        PanelCambioLayout.setVerticalGroup(
-            PanelCambioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(LArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(LCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(LRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(LIndices, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(LEstandarizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LSalida1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jMenu1.setText("Archivo");
+        PanelCambio.setBackground(new java.awt.Color(0, 153, 153));
+        PanelCambio.setLayout(new java.awt.CardLayout());
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Nuevo Archivo");
-        jMenu1.add(jMenuItem1);
+        Archivo.setBackground(new java.awt.Color(0, 153, 204));
+        Archivo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Salva Archivo");
-        jMenu1.add(jMenuItem2);
+        jButton1.setText("Crear Archivo");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Cerrar Arhivo");
-        jMenu1.add(jMenuItem3);
+        javax.swing.GroupLayout ArchivoLayout = new javax.swing.GroupLayout(Archivo);
+        Archivo.setLayout(ArchivoLayout);
+        ArchivoLayout.setHorizontalGroup(
+            ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ArchivoLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(611, Short.MAX_VALUE))
+        );
+        ArchivoLayout.setVerticalGroup(
+            ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ArchivoLayout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(644, Short.MAX_VALUE))
+        );
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
-        jMenuItem4.setText("Salir");
-        jMenu1.add(jMenuItem4);
+        PanelCambio.add(Archivo, "card2");
 
-        jMenuBar1.add(jMenu1);
+        Campos.setBackground(new java.awt.Color(0, 153, 204));
 
-        jMenu2.setText("Campos");
+        jButton2.setText("CrearCampos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem5.setText("Crear Campos");
-        jMenu2.add(jMenuItem5);
+        javax.swing.GroupLayout CamposLayout = new javax.swing.GroupLayout(Campos);
+        Campos.setLayout(CamposLayout);
+        CamposLayout.setHorizontalGroup(
+            CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CamposLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jButton2)
+                .addContainerGap(728, Short.MAX_VALUE))
+        );
+        CamposLayout.setVerticalGroup(
+            CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CamposLayout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(jButton2)
+                .addContainerGap(674, Short.MAX_VALUE))
+        );
 
-        jMenuItem6.setText("Listar Campos");
-        jMenu2.add(jMenuItem6);
+        PanelCambio.add(Campos, "card2");
 
-        jMenuItem7.setText("Modificar Campos");
-        jMenu2.add(jMenuItem7);
+        Registros.setBackground(new java.awt.Color(0, 153, 204));
 
-        jMenuItem8.setText("Borrar Campos");
-        jMenu2.add(jMenuItem8);
+        javax.swing.GroupLayout RegistrosLayout = new javax.swing.GroupLayout(Registros);
+        Registros.setLayout(RegistrosLayout);
+        RegistrosLayout.setHorizontalGroup(
+            RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 927, Short.MAX_VALUE)
+        );
+        RegistrosLayout.setVerticalGroup(
+            RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
-        jMenuBar1.add(jMenu2);
+        PanelCambio.add(Registros, "card2");
 
-        jMenu3.setText("Registros");
+        Indices.setBackground(new java.awt.Color(0, 153, 204));
 
-        jMenuItem9.setText("Introducir Registros");
-        jMenu3.add(jMenuItem9);
+        javax.swing.GroupLayout IndicesLayout = new javax.swing.GroupLayout(Indices);
+        Indices.setLayout(IndicesLayout);
+        IndicesLayout.setHorizontalGroup(
+            IndicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 927, Short.MAX_VALUE)
+        );
+        IndicesLayout.setVerticalGroup(
+            IndicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
-        jMenuItem10.setText("Modificar Registros");
-        jMenu3.add(jMenuItem10);
+        PanelCambio.add(Indices, "card2");
 
-        jMenuItem11.setText("Buscar Registros");
-        jMenu3.add(jMenuItem11);
+        Estandar.setBackground(new java.awt.Color(0, 153, 204));
 
-        jMenuItem12.setText("Borrar Registros");
-        jMenu3.add(jMenuItem12);
+        javax.swing.GroupLayout EstandarLayout = new javax.swing.GroupLayout(Estandar);
+        Estandar.setLayout(EstandarLayout);
+        EstandarLayout.setHorizontalGroup(
+            EstandarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 927, Short.MAX_VALUE)
+        );
+        EstandarLayout.setVerticalGroup(
+            EstandarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
-        jMenuItem13.setText("Listar Registros");
-        jMenu3.add(jMenuItem13);
+        PanelCambio.add(Estandar, "card2");
 
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Indices");
-
-        jMenuItem14.setText("Crear Indices");
-        jMenu4.add(jMenuItem14);
-
-        jMenuItem15.setText("Re Indexar Archivo");
-        jMenu4.add(jMenuItem15);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Estandarizacion");
-
-        jMenuItem16.setText("Exportar Excel");
-        jMenu5.add(jMenuItem16);
-
-        jMenuItem17.setText("Exportar XML con Schema");
-        jMenu5.add(jMenuItem17);
-
-        jMenuBar1.add(jMenu5);
-
-        setJMenuBar(jMenuBar1);
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 927, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelCambio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCambio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCambio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LArchivoMouseClicked
+       PanelCambio.removeAll();
+       PanelCambio.repaint();
+       PanelCambio.revalidate();
+       
+       PanelCambio.add(Archivo);
+       PanelCambio.repaint();
+       PanelCambio.revalidate();
+    }//GEN-LAST:event_LArchivoMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void LCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCamposMouseClicked
+     PanelCambio.removeAll();
+       PanelCambio.repaint();
+       PanelCambio.revalidate();
+       
+       PanelCambio.add(Campos);
+       PanelCambio.repaint();
+       PanelCambio.revalidate();
+    }//GEN-LAST:event_LCamposMouseClicked
+
+    private void LSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalidaMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_LSalidaMouseClicked
+
+    private void LSalida1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalida1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LSalida1MouseClicked
+
+    private void LSalida1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalida1MousePressed
+      System.exit(0);
+    }//GEN-LAST:event_LSalida1MousePressed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,29 +383,22 @@ public class MainGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Archivo;
+    private javax.swing.JPanel Campos;
+    private javax.swing.JPanel Estandar;
+    private javax.swing.JPanel Indices;
+    private javax.swing.JLabel LArchivo;
+    private javax.swing.JLabel LCampos;
+    private javax.swing.JLabel LEstandarizacion;
+    private javax.swing.JLabel LIndices;
+    private javax.swing.JLabel LRegistros;
+    private javax.swing.JLabel LSalida;
+    private javax.swing.JLabel LSalida1;
     private javax.swing.JPanel PanelCambio;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel Registros;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
