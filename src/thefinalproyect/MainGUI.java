@@ -35,17 +35,22 @@ public class MainGUI extends javax.swing.JFrame {
         LCampos = new javax.swing.JLabel();
         LRegistros = new javax.swing.JLabel();
         LIndices = new javax.swing.JLabel();
-        LSalida = new javax.swing.JLabel();
         LEstandarizacion = new javax.swing.JLabel();
+        LSalida = new javax.swing.JLabel();
         LSalida1 = new javax.swing.JLabel();
         PanelCambio = new javax.swing.JPanel();
         Archivo = new javax.swing.JPanel();
         bt_CrearArchivo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         Campos = new javax.swing.JPanel();
         bt_CrearCampo = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Registros = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         Indices = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         Estandar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ProyectoEDDII");
@@ -91,6 +96,11 @@ public class MainGUI extends javax.swing.JFrame {
         LRegistros.setMaximumSize(new java.awt.Dimension(100, 100));
         LRegistros.setMinimumSize(new java.awt.Dimension(100, 100));
         LRegistros.setPreferredSize(new java.awt.Dimension(100, 100));
+        LRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LRegistrosMouseClicked(evt);
+            }
+        });
 
         LIndices.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         LIndices.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,6 +109,24 @@ public class MainGUI extends javax.swing.JFrame {
         LIndices.setMaximumSize(new java.awt.Dimension(100, 100));
         LIndices.setMinimumSize(new java.awt.Dimension(100, 100));
         LIndices.setPreferredSize(new java.awt.Dimension(100, 100));
+        LIndices.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LIndicesMouseClicked(evt);
+            }
+        });
+
+        LEstandarizacion.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        LEstandarizacion.setForeground(new java.awt.Color(255, 255, 255));
+        LEstandarizacion.setText("Estandarizacion");
+        LEstandarizacion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        LEstandarizacion.setMaximumSize(new java.awt.Dimension(100, 100));
+        LEstandarizacion.setMinimumSize(new java.awt.Dimension(100, 100));
+        LEstandarizacion.setPreferredSize(new java.awt.Dimension(100, 100));
+        LEstandarizacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LEstandarizacionMouseClicked(evt);
+            }
+        });
 
         LSalida.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         LSalida.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,14 +139,6 @@ public class MainGUI extends javax.swing.JFrame {
                 LSalidaMouseClicked(evt);
             }
         });
-
-        LEstandarizacion.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        LEstandarizacion.setForeground(new java.awt.Color(255, 255, 255));
-        LEstandarizacion.setText("Estandarizacion");
-        LEstandarizacion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        LEstandarizacion.setMaximumSize(new java.awt.Dimension(100, 100));
-        LEstandarizacion.setMinimumSize(new java.awt.Dimension(100, 100));
-        LEstandarizacion.setPreferredSize(new java.awt.Dimension(100, 100));
 
         LSalida1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         LSalida1.setForeground(new java.awt.Color(255, 255, 255));
@@ -192,6 +212,9 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel1.setText("Archivo");
+
         javax.swing.GroupLayout ArchivoLayout = new javax.swing.GroupLayout(Archivo);
         Archivo.setLayout(ArchivoLayout);
         ArchivoLayout.setHorizontalGroup(
@@ -199,14 +222,20 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(ArchivoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(611, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ArchivoLayout.createSequentialGroup()
+                .addContainerGap(392, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(375, 375, 375))
         );
         ArchivoLayout.setVerticalGroup(
             ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ArchivoLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(55, 55, 55)
                 .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(644, Short.MAX_VALUE))
+                .addContainerGap(602, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Archivo, "card2");
@@ -220,6 +249,9 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel2.setText("Campos");
+
         javax.swing.GroupLayout CamposLayout = new javax.swing.GroupLayout(Campos);
         Campos.setLayout(CamposLayout);
         CamposLayout.setHorizontalGroup(
@@ -227,59 +259,92 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(CamposLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CamposLayout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(383, 383, 383))
         );
         CamposLayout.setVerticalGroup(
             CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CamposLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addGap(41, 41, 41)
                 .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(622, Short.MAX_VALUE))
+                .addContainerGap(624, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Campos, "card2");
 
         Registros.setBackground(new java.awt.Color(0, 153, 204));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setText("Registros");
+
         javax.swing.GroupLayout RegistrosLayout = new javax.swing.GroupLayout(Registros);
         Registros.setLayout(RegistrosLayout);
         RegistrosLayout.setHorizontalGroup(
             RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 927, Short.MAX_VALUE)
+            .addGroup(RegistrosLayout.createSequentialGroup()
+                .addGap(345, 345, 345)
+                .addComponent(jLabel3)
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         RegistrosLayout.setVerticalGroup(
             RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(RegistrosLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel3)
+                .addContainerGap(732, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Registros, "card2");
 
         Indices.setBackground(new java.awt.Color(0, 153, 204));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel4.setText("Indices");
+
         javax.swing.GroupLayout IndicesLayout = new javax.swing.GroupLayout(Indices);
         Indices.setLayout(IndicesLayout);
         IndicesLayout.setHorizontalGroup(
             IndicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 927, Short.MAX_VALUE)
+            .addGroup(IndicesLayout.createSequentialGroup()
+                .addGap(345, 345, 345)
+                .addComponent(jLabel4)
+                .addContainerGap(431, Short.MAX_VALUE))
         );
         IndicesLayout.setVerticalGroup(
             IndicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(IndicesLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel4)
+                .addContainerGap(732, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Indices, "card2");
 
         Estandar.setBackground(new java.awt.Color(0, 153, 204));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel5.setText("Estandarizacion");
+
         javax.swing.GroupLayout EstandarLayout = new javax.swing.GroupLayout(Estandar);
         Estandar.setLayout(EstandarLayout);
         EstandarLayout.setHorizontalGroup(
             EstandarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 927, Short.MAX_VALUE)
+            .addGroup(EstandarLayout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(jLabel5)
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         EstandarLayout.setVerticalGroup(
             EstandarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(EstandarLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel5)
+                .addContainerGap(733, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Estandar, "card2");
@@ -358,6 +423,36 @@ public class MainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_CrearArchivoActionPerformed
 
+    private void LRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LRegistrosMouseClicked
+       PanelCambio.removeAll();
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+
+        PanelCambio.add(Registros);
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+    }//GEN-LAST:event_LRegistrosMouseClicked
+
+    private void LIndicesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LIndicesMouseClicked
+      PanelCambio.removeAll();
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+
+        PanelCambio.add(Indices);
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+    }//GEN-LAST:event_LIndicesMouseClicked
+
+    private void LEstandarizacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEstandarizacionMouseClicked
+        PanelCambio.removeAll();
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+
+        PanelCambio.add(Estandar);
+        PanelCambio.repaint();
+        PanelCambio.revalidate();
+    }//GEN-LAST:event_LEstandarizacionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -410,6 +505,11 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JPanel Registros;
     private javax.swing.JButton bt_CrearArchivo;
     private javax.swing.JButton bt_CrearCampo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
     File ArchivoActual;
