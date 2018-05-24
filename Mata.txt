@@ -1,0 +1,1 @@
+String|NadaµString| Nombreµint| Telefonoµchar| Sexoµ

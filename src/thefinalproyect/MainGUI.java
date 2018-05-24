@@ -1,8 +1,11 @@
 package thefinalproyect;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -10,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -57,9 +61,11 @@ public class MainGUI extends javax.swing.JFrame {
         Archivo = new javax.swing.JPanel();
         bt_CrearArchivo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jb_LeerCampos = new javax.swing.JButton();
         Campos = new javax.swing.JPanel();
         bt_CrearCampo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jb_GuardarCampos = new javax.swing.JButton();
         Registros = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         Indices = new javax.swing.JPanel();
@@ -314,6 +320,13 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("Archivo");
 
+        jb_LeerCampos.setText("Leer Campos de un Archivo");
+        jb_LeerCampos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_LeerCamposMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout ArchivoLayout = new javax.swing.GroupLayout(Archivo);
         Archivo.setLayout(ArchivoLayout);
         ArchivoLayout.setHorizontalGroup(
@@ -324,7 +337,9 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(375, 375, 375))
             .addGroup(ArchivoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_LeerCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ArchivoLayout.setVerticalGroup(
@@ -334,7 +349,9 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(55, 55, 55)
                 .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(602, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jb_LeerCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(501, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Archivo, "card2");
@@ -356,18 +373,27 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel2.setText("Campos");
 
+        jb_GuardarCampos.setText("Guardar Campos");
+        jb_GuardarCampos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_GuardarCamposMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout CamposLayout = new javax.swing.GroupLayout(Campos);
         Campos.setLayout(CamposLayout);
         CamposLayout.setHorizontalGroup(
             CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CamposLayout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CamposLayout.createSequentialGroup()
                 .addContainerGap(376, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(383, 383, 383))
+            .addGroup(CamposLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_GuardarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_CrearCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CamposLayout.setVerticalGroup(
             CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +402,9 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(41, 41, 41)
                 .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(624, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_GuardarCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(529, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Campos, "card2");
@@ -575,7 +603,7 @@ public class MainGUI extends javax.swing.JFrame {
     private void bt_CrearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearCampoMouseClicked
         //int Cantidad = Integer.getInteger(JOptionPane.showInputDialog("Ingrese la cantidad de campos a guardar"));
         Scanner sc = new Scanner(System.in);
-        
+
         Boolean IsNumeric = false;
         while (IsNumeric == false) {
             String algo = JOptionPane.showInputDialog("Ingrese la cantidad de campos");
@@ -587,19 +615,16 @@ public class MainGUI extends javax.swing.JFrame {
                 IsNumeric = false;
             }
         }
-        
-            jtf_NombreCampo.setText("");
-            jd_NuevoCampo.pack();
-            jd_NuevoCampo.show();
-            jd_NuevoCampo.setVisible(true);
-            jd_NuevoCampo.setEnabled(true);
 
-            
-        
+        jtf_NombreCampo.setText("");
+        jd_NuevoCampo.pack();
+        jd_NuevoCampo.show();
+        jd_NuevoCampo.setVisible(true);
+        jd_NuevoCampo.setEnabled(true);
+
     }//GEN-LAST:event_bt_CrearCampoMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        
         TipoCampo = "String";
         NombreCampo = jtf_NombreCampo.getText();
         if (RB_Int.isSelected()) {
@@ -612,12 +637,12 @@ public class MainGUI extends javax.swing.JFrame {
             TipoCampo = "String";
         }
         //jd_NuevoCampo.dispose();
-        Campos c = new Campos(TipoCampo, NombreCampo);
+        c = new Campos(TipoCampo, NombreCampo);
         CamposDArchivo.add(c);
         bg_Tipo.clearSelection();
         contador++;
         jtf_NombreCampo.setText(" ");
-        if (contador==Cantidad) {
+        if (contador == Cantidad) {
             jd_NuevoCampo.dispose();
             /*for (int i = 0; i < CamposDArchivo.size(); i++) {
                 System.out.println(CamposDArchivo.get(i).toString());
@@ -625,6 +650,62 @@ public class MainGUI extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jb_GuardarCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarCamposMouseClicked
+        JFileChooser jfc = new JFileChooser();
+        int seleccion = jfc.showSaveDialog(this);
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            try {
+                File fichero = jfc.getSelectedFile();
+                fw = new FileWriter(fichero);
+                bw = new BufferedWriter(fw);
+                //bw.write(c.toString());
+                for (Campos ca : CamposDArchivo) {
+                    bw.write(ca.toString());
+                }
+                bw.flush();
+                JOptionPane.showMessageDialog(this, "Campos guardados exitosamente");
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    bw.close();
+                    fw.close();
+                } catch (Exception e) {
+                }
+            }
+        }
+    }//GEN-LAST:event_jb_GuardarCamposMouseClicked
+
+    private void jb_LeerCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LeerCamposMouseClicked
+        Scanner sc = null;
+        File archivo = null;
+        BufferedReader br = null;
+        FileReader fr = null;
+        try {
+            JFileChooser jcf = new JFileChooser();
+            FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de Texto", "txt");
+            FileNameExtensionFilter filtro2 = new FileNameExtensionFilter("Imagenes", "jpg", "png", "bmp");
+            jcf.setFileFilter(filtro);
+            jcf.addChoosableFileFilter(filtro2);
+            int seleccion = jcf.showOpenDialog(this);
+            ///////////////////////////////////////////
+            if(seleccion == JFileChooser.APPROVE_OPTION){
+                 archivo = jcf.getSelectedFile();
+                 fr = new FileReader(archivo);
+                 br = new BufferedReader(fr);
+                 String linea = "";
+                 linea = br.readLine();
+                 JOptionPane.showMessageDialog(Campos, linea);
+            }else{
+                JOptionPane.showMessageDialog(Campos, "El archivo esta vacio");
+            }
+            ////////////////////////////////
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jb_LeerCamposMouseClicked
 
     /**
      * @param args the command line arguments
@@ -693,13 +774,16 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jb_GuardarCampos;
+    private javax.swing.JButton jb_LeerCampos;
     private javax.swing.JDialog jd_NuevoCampo;
     private javax.swing.JTextField jtf_NombreCampo;
     // End of variables declaration//GEN-END:variables
     File ArchivoActual;
-    String TipoCampo;
-    int contador=0;
-    String NombreCampo;
+    String TipoCampo = "";
+    int contador = 0;
+    String NombreCampo = "";
     ArrayList<Campos> CamposDArchivo = new ArrayList();
     int Cantidad = 0;
+    Campos c;
 }
