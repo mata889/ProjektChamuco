@@ -521,8 +521,8 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void bt_CrearArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearArchivoMouseClicked
         Writer writer = null;
-        String NombreA = (JOptionPane.showInputDialog("Ingrese el nombre del archivo")+".txt");
-        
+        String NombreA = (JOptionPane.showInputDialog("Ingrese el nombre del archivo") + ".txt");
+
         try {
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(NombreA), "utf-8"));
             //writer.write("");
@@ -575,16 +575,25 @@ public class MainGUI extends javax.swing.JFrame {
     private void bt_CrearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearCampoMouseClicked
         //int Cantidad = Integer.getInteger(JOptionPane.showInputDialog("Ingrese la cantidad de campos a guardar"));
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la cantidad de campos");
-        int Cantidad = sc.nextInt();
-        ArrayList<Campos> CamposDArchivo = new ArrayList();
+        int Cantidad = 0 ;
+        Boolean IsNumeric=false;
+        while (IsNumeric==false) {            
+            String algo=JOptionPane.showInputDialog("Ingrese la cantidad de campos");
+            try {
+                 Cantidad=Integer.parseInt(algo);
+                IsNumeric=true;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,"Porfavor introduzca un Numero");
+                IsNumeric=false;
+            }
+        }
         for (int i = 0; i < Cantidad; i++) {
             jtf_NombreCampo.setText("");
             jd_NuevoCampo.pack();
             jd_NuevoCampo.show();
             jd_NuevoCampo.setVisible(true);
             jd_NuevoCampo.setEnabled(true);
-            Campos c = new Campos(TipoCampo,NombreCampo);
+            Campos c = new Campos(TipoCampo, NombreCampo);
             CamposDArchivo.add(c);
         }
     }//GEN-LAST:event_bt_CrearCampoMouseClicked
@@ -592,17 +601,19 @@ public class MainGUI extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         TipoCampo = "String";
         NombreCampo = jtf_NombreCampo.getText();
-        if(RB_Int.isSelected()){
+        if (RB_Int.isSelected()) {
             TipoCampo = "int";
-        }else if(RB_Double.isSelected()){
+        } else if (RB_Double.isSelected()) {
             TipoCampo = "Double";
-        }else if(RB_Char.isSelected()){
+        } else if (RB_Char.isSelected()) {
             TipoCampo = "char";
-        }else if(RB_String.isSelected()){
+        } else if (RB_String.isSelected()) {
             TipoCampo = "String";
         }
         jd_NuevoCampo.dispose();
-        
+        bg_Tipo.clearSelection();
+        jtf_NombreCampo.setText(" ");
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -678,4 +689,5 @@ public class MainGUI extends javax.swing.JFrame {
     File ArchivoActual;
     String TipoCampo;
     String NombreCampo;
+    ArrayList<Campos> CamposDArchivo = new ArrayList();
 }
