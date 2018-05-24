@@ -33,7 +33,7 @@ public class Campos {
 
     @Override
     public String toString() {
-        return "Campos{" + "Tipo=" + Tipo + ", Nombre=" + Nombre + '}';
+        return Tipo + "|" + Nombre+"µ" ;
     }
     
 }
