@@ -575,30 +575,31 @@ public class MainGUI extends javax.swing.JFrame {
     private void bt_CrearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearCampoMouseClicked
         //int Cantidad = Integer.getInteger(JOptionPane.showInputDialog("Ingrese la cantidad de campos a guardar"));
         Scanner sc = new Scanner(System.in);
-        int Cantidad = 0 ;
-        Boolean IsNumeric=false;
-        while (IsNumeric==false) {            
-            String algo=JOptionPane.showInputDialog("Ingrese la cantidad de campos");
+        
+        Boolean IsNumeric = false;
+        while (IsNumeric == false) {
+            String algo = JOptionPane.showInputDialog("Ingrese la cantidad de campos");
             try {
-                 Cantidad=Integer.parseInt(algo);
-                IsNumeric=true;
+                Cantidad = Integer.parseInt(algo);
+                IsNumeric = true;
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(this,"Porfavor introduzca un Numero");
-                IsNumeric=false;
+                JOptionPane.showMessageDialog(this, "Porfavor introduzca un Numero");
+                IsNumeric = false;
             }
         }
-        for (int i = 0; i < Cantidad; i++) {
+        
             jtf_NombreCampo.setText("");
             jd_NuevoCampo.pack();
             jd_NuevoCampo.show();
             jd_NuevoCampo.setVisible(true);
             jd_NuevoCampo.setEnabled(true);
-            Campos c = new Campos(TipoCampo, NombreCampo);
-            CamposDArchivo.add(c);
-        }
+
+            
+        
     }//GEN-LAST:event_bt_CrearCampoMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        
         TipoCampo = "String";
         NombreCampo = jtf_NombreCampo.getText();
         if (RB_Int.isSelected()) {
@@ -610,9 +611,18 @@ public class MainGUI extends javax.swing.JFrame {
         } else if (RB_String.isSelected()) {
             TipoCampo = "String";
         }
-        jd_NuevoCampo.dispose();
+        //jd_NuevoCampo.dispose();
+        Campos c = new Campos(TipoCampo, NombreCampo);
+        CamposDArchivo.add(c);
         bg_Tipo.clearSelection();
+        contador++;
         jtf_NombreCampo.setText(" ");
+        if (contador==Cantidad) {
+            jd_NuevoCampo.dispose();
+            /*for (int i = 0; i < CamposDArchivo.size(); i++) {
+                System.out.println(CamposDArchivo.get(i).toString());
+            }*/
+        }
 
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -688,6 +698,8 @@ public class MainGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     File ArchivoActual;
     String TipoCampo;
+    int contador=0;
     String NombreCampo;
     ArrayList<Campos> CamposDArchivo = new ArrayList();
+    int Cantidad = 0;
 }
