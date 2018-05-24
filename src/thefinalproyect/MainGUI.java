@@ -1,11 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package thefinalproyect;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,6 +33,17 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_NuevoCampo = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jtf_NombreCampo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        RB_Int = new javax.swing.JRadioButton();
+        RB_String = new javax.swing.JRadioButton();
+        RB_Double = new javax.swing.JRadioButton();
+        RB_Char = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        bg_Tipo = new javax.swing.ButtonGroup();
         PanelPrincipal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         LArchivo = new javax.swing.JLabel();
@@ -51,6 +66,90 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Estandar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+
+        jd_NuevoCampo.setTitle("Nuevo Campo");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setText("Nombre del campo:");
+
+        jLabel7.setText("Tipo del Campo:");
+
+        bg_Tipo.add(RB_Int);
+        RB_Int.setText("Integer");
+
+        bg_Tipo.add(RB_String);
+        RB_String.setText("String");
+
+        bg_Tipo.add(RB_Double);
+        RB_Double.setText("Double");
+
+        bg_Tipo.add(RB_Char);
+        RB_Char.setText("Char");
+
+        jButton1.setText("Aceptar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_NombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(RB_Int))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RB_Double)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RB_Char)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RB_String)))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jtf_NombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RB_Int)
+                    .addComponent(RB_Double)
+                    .addComponent(RB_Char)
+                    .addComponent(RB_String))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_NuevoCampoLayout = new javax.swing.GroupLayout(jd_NuevoCampo.getContentPane());
+        jd_NuevoCampo.getContentPane().setLayout(jd_NuevoCampoLayout);
+        jd_NuevoCampoLayout.setHorizontalGroup(
+            jd_NuevoCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jd_NuevoCampoLayout.setVerticalGroup(
+            jd_NuevoCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ProyectoEDDII");
@@ -219,14 +318,14 @@ public class MainGUI extends javax.swing.JFrame {
         Archivo.setLayout(ArchivoLayout);
         ArchivoLayout.setHorizontalGroup(
             ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ArchivoLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ArchivoLayout.createSequentialGroup()
                 .addContainerGap(392, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(375, 375, 375))
+            .addGroup(ArchivoLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(bt_CrearArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ArchivoLayout.setVerticalGroup(
             ArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,6 +342,11 @@ public class MainGUI extends javax.swing.JFrame {
         Campos.setBackground(new java.awt.Color(0, 153, 204));
 
         bt_CrearCampo.setText("CrearCampos");
+        bt_CrearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_CrearCampoMouseClicked(evt);
+            }
+        });
         bt_CrearCampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_CrearCampoActionPerformed(evt);
@@ -416,7 +520,22 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LSalida1MousePressed
 
     private void bt_CrearArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearArchivoMouseClicked
+        Writer writer = null;
+        String NombreA = (JOptionPane.showInputDialog("Ingrese el nombre del archivo")+".txt");
         
+        try {
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(NombreA), "utf-8"));
+            //writer.write("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(Campos, "Ocurrio un error al intentar crear el archivo");
+        } finally {
+            try {
+                writer.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(Campos, "Ocurrio un error al intentar crear el archivo");
+            }
+        }
+        JOptionPane.showMessageDialog(Campos, "Se ha creado el archivo de texto");
     }//GEN-LAST:event_bt_CrearArchivoMouseClicked
 
     private void bt_CrearArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CrearArchivoActionPerformed
@@ -424,7 +543,7 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_CrearArchivoActionPerformed
 
     private void LRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LRegistrosMouseClicked
-       PanelCambio.removeAll();
+        PanelCambio.removeAll();
         PanelCambio.repaint();
         PanelCambio.revalidate();
 
@@ -434,7 +553,7 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LRegistrosMouseClicked
 
     private void LIndicesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LIndicesMouseClicked
-      PanelCambio.removeAll();
+        PanelCambio.removeAll();
         PanelCambio.repaint();
         PanelCambio.revalidate();
 
@@ -452,6 +571,39 @@ public class MainGUI extends javax.swing.JFrame {
         PanelCambio.repaint();
         PanelCambio.revalidate();
     }//GEN-LAST:event_LEstandarizacionMouseClicked
+
+    private void bt_CrearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CrearCampoMouseClicked
+        //int Cantidad = Integer.getInteger(JOptionPane.showInputDialog("Ingrese la cantidad de campos a guardar"));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cantidad de campos");
+        int Cantidad = sc.nextInt();
+        ArrayList<Campos> CamposDArchivo = new ArrayList();
+        for (int i = 0; i < Cantidad; i++) {
+            jtf_NombreCampo.setText("");
+            jd_NuevoCampo.pack();
+            jd_NuevoCampo.show();
+            jd_NuevoCampo.setVisible(true);
+            jd_NuevoCampo.setEnabled(true);
+            Campos c = new Campos(TipoCampo,NombreCampo);
+            CamposDArchivo.add(c);
+        }
+    }//GEN-LAST:event_bt_CrearCampoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        TipoCampo = "String";
+        NombreCampo = jtf_NombreCampo.getText();
+        if(RB_Int.isSelected()){
+            TipoCampo = "int";
+        }else if(RB_Double.isSelected()){
+            TipoCampo = "Double";
+        }else if(RB_Char.isSelected()){
+            TipoCampo = "char";
+        }else if(RB_String.isSelected()){
+            TipoCampo = "String";
+        }
+        jd_NuevoCampo.dispose();
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -502,15 +654,28 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel LSalida1;
     private javax.swing.JPanel PanelCambio;
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JRadioButton RB_Char;
+    private javax.swing.JRadioButton RB_Double;
+    private javax.swing.JRadioButton RB_Int;
+    private javax.swing.JRadioButton RB_String;
     private javax.swing.JPanel Registros;
+    private javax.swing.ButtonGroup bg_Tipo;
     private javax.swing.JButton bt_CrearArchivo;
     private javax.swing.JButton bt_CrearCampo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JDialog jd_NuevoCampo;
+    private javax.swing.JTextField jtf_NombreCampo;
     // End of variables declaration//GEN-END:variables
     File ArchivoActual;
+    String TipoCampo;
+    String NombreCampo;
 }
