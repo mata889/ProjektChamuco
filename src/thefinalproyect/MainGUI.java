@@ -815,6 +815,11 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
        DefaultListModel Modelo = (DefaultListModel)jl_Campos.getModel();
+       if(!jl_Campos.isSelectionEmpty()){
+           
+       }else{
+           JOptionPane.showMessageDialog(this, "No hay ningun elemento seleccionado");
+       }
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
