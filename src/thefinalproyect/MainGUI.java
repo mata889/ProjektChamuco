@@ -54,9 +54,9 @@ public class MainGUI extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_Campos = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jb_AgregarCampo = new javax.swing.JButton();
+        jb_LlavePrimaria = new javax.swing.JButton();
+        jb_GuardarC = new javax.swing.JButton();
         PanelPrincipal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         LArchivo = new javax.swing.JLabel();
@@ -191,21 +191,26 @@ public class MainGUI extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
 
-        jButton2.setText("Agregar Campo");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_AgregarCampo.setText("Agregar Campo");
+        jb_AgregarCampo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jb_AgregarCampoMouseClicked(evt);
             }
         });
 
-        jButton3.setText("Seleccionar como llave primaria");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_LlavePrimaria.setText("Seleccionar como llave primaria");
+        jb_LlavePrimaria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                jb_LlavePrimariaMouseClicked(evt);
             }
         });
 
-        jButton4.setText("Guardar los campos");
+        jb_GuardarC.setText("Guardar los campos");
+        jb_GuardarC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_GuardarCMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -214,9 +219,9 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jb_AgregarCampo)
+                    .addComponent(jb_LlavePrimaria)
+                    .addComponent(jb_GuardarC))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -230,11 +235,11 @@ public class MainGUI extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(jButton2)
+                        .addComponent(jb_AgregarCampo)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(jb_LlavePrimaria)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)))
+                        .addComponent(jb_GuardarC)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -656,6 +661,7 @@ public class MainGUI extends javax.swing.JFrame {
             }
         }
         JOptionPane.showMessageDialog(Campos, "Se ha creado el archivo de texto");
+        ArchivoActual = new File(NombreA);
     }//GEN-LAST:event_bt_CrearArchivoMouseClicked
 
     private void bt_CrearArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CrearArchivoActionPerformed
@@ -714,7 +720,7 @@ public class MainGUI extends javax.swing.JFrame {
         jd_NuevoCampo.show();
         jd_NuevoCampo.setVisible(true);
         jd_NuevoCampo.setEnabled(true);
-        */
+         */
         AgregarCampos.pack();
         AgregarCampos.show();
         AgregarCampos.setVisible(true);
@@ -749,7 +755,7 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jb_GuardarCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarCamposMouseClicked
-        JFileChooser jfc = new JFileChooser();
+        /*JFileChooser jfc = new JFileChooser();
         int seleccion = jfc.showSaveDialog(this);
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -773,6 +779,10 @@ public class MainGUI extends javax.swing.JFrame {
                 } catch (Exception e) {
                 }
             }
+        }*/
+        if (ArchivoActual != null) {
+            DefaultListModel modelo = (DefaultListModel) jl_Campos.getModel();
+
         }
     }//GEN-LAST:event_jb_GuardarCamposMouseClicked
 
@@ -789,14 +799,14 @@ public class MainGUI extends javax.swing.JFrame {
             jcf.addChoosableFileFilter(filtro2);
             int seleccion = jcf.showOpenDialog(this);
             ///////////////////////////////////////////
-            if(seleccion == JFileChooser.APPROVE_OPTION){
-                 archivo = jcf.getSelectedFile();
-                 fr = new FileReader(archivo);
-                 br = new BufferedReader(fr);
-                 String linea = "";
-                 linea = br.readLine();
-                 JOptionPane.showMessageDialog(Campos, linea);
-            }else{
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                archivo = jcf.getSelectedFile();
+                fr = new FileReader(archivo);
+                br = new BufferedReader(fr);
+                String linea = "";
+                linea = br.readLine();
+                JOptionPane.showMessageDialog(Campos, linea);
+            } else {
                 JOptionPane.showMessageDialog(Campos, "El archivo esta vacio");
             }
             ////////////////////////////////
@@ -804,23 +814,50 @@ public class MainGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_LeerCamposMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jb_AgregarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AgregarCampoMouseClicked
         String Tipo, Nombre;
         Nombre = JOptionPane.showInputDialog(this, "Introdusca el nombre del campo");
-        Tipo = JOptionPane.showInputDialog(this,"Ingrese el tipo del dato (String, Integer, Double, Character, etc.");
-        Campos c = new Campos(Tipo,Nombre);
-        DefaultListModel Modelo = (DefaultListModel)jl_Campos.getModel();
+        Tipo = JOptionPane.showInputDialog(this, "Ingrese el tipo del dato (String, Integer, Double, Character, etc.");
+        Campos c = new Campos(Tipo, Nombre);
+        DefaultListModel Modelo = (DefaultListModel) jl_Campos.getModel();
         Modelo.addElement(c);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jb_AgregarCampoMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-       DefaultListModel Modelo = (DefaultListModel)jl_Campos.getModel();
-       if(!jl_Campos.isSelectionEmpty()){
-           
-       }else{
-           JOptionPane.showMessageDialog(this, "No hay ningun elemento seleccionado");
-       }
-    }//GEN-LAST:event_jButton3MouseClicked
+    private void jb_LlavePrimariaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LlavePrimariaMouseClicked
+        DefaultListModel Modelo = (DefaultListModel) jl_Campos.getModel();
+        if (!jl_Campos.isSelectionEmpty()) {
+            Campos CL = jl_Campos.getSelectedValue();
+            CL.setNombre("*" + CL.getNombre());
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay ningun elemento seleccionado");
+        }
+    }//GEN-LAST:event_jb_LlavePrimariaMouseClicked
+
+    private void jb_GuardarCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarCMouseClicked
+        DefaultListModel Modelo = (DefaultListModel) jl_Campos.getModel();
+        if (Modelo.getSize() != 0) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                for (int i = 0; i < Modelo.getSize(); i++) {
+                    Campos CL = (Campos) Modelo.get(i);
+                    fw = new FileWriter(ArchivoActual);
+                    bw = new BufferedWriter(fw);
+                    bw.write(CL.toString());
+                }
+                bw.flush();
+                try{
+                    fw.close();
+                    bw.close();
+                }catch(Exception Ex){}
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(Campos, "Esto se fue a la mier**");
+            }
+        } else {
+            JOptionPane.showMessageDialog(Campos, "La lista esta actualmente vacia");
+
+        }
+    }//GEN-LAST:event_jb_GuardarCMouseClicked
 
     /**
      * @param args the command line arguments
@@ -881,9 +918,6 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JButton bt_CrearArchivo;
     private javax.swing.JButton bt_CrearCampo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -896,8 +930,11 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jb_AgregarCampo;
+    private javax.swing.JButton jb_GuardarC;
     private javax.swing.JButton jb_GuardarCampos;
     private javax.swing.JButton jb_LeerCampos;
+    private javax.swing.JButton jb_LlavePrimaria;
     private javax.swing.JDialog jd_NuevoCampo;
     private javax.swing.JList<Campos> jl_Campos;
     private javax.swing.JTextField jtf_NombreCampo;
