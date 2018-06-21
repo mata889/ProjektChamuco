@@ -77,6 +77,7 @@ public class MainGUI extends javax.swing.JFrame {
         jb_GuardarCampos = new javax.swing.JButton();
         Registros = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         Indices = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         Estandar = new javax.swing.JPanel();
@@ -511,13 +512,20 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel3.setText("Registros");
 
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout RegistrosLayout = new javax.swing.GroupLayout(Registros);
         Registros.setLayout(RegistrosLayout);
         RegistrosLayout.setHorizontalGroup(
             RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistrosLayout.createSequentialGroup()
-                .addGap(345, 345, 345)
-                .addComponent(jLabel3)
+                .addGroup(RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistrosLayout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jLabel3))
+                    .addGroup(RegistrosLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jButton2)))
                 .addContainerGap(388, Short.MAX_VALUE))
         );
         RegistrosLayout.setVerticalGroup(
@@ -525,7 +533,9 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(RegistrosLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel3)
-                .addContainerGap(732, Short.MAX_VALUE))
+                .addGap(140, 140, 140)
+                .addComponent(jButton2)
+                .addContainerGap(569, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Registros, "card2");
@@ -918,6 +928,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JButton bt_CrearArchivo;
     private javax.swing.JButton bt_CrearCampo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
