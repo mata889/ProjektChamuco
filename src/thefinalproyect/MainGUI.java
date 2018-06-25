@@ -75,9 +75,10 @@ public class MainGUI extends javax.swing.JFrame {
         bt_CrearCampo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jb_GuardarCampos = new javax.swing.JButton();
+        jb_LeerCampos2 = new javax.swing.JButton();
         Registros = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jb_GuardarRegistro = new javax.swing.JButton();
         Indices = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         Estandar = new javax.swing.JPanel();
@@ -478,6 +479,13 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        jb_LeerCampos2.setText("Leer los campos");
+        jb_LeerCampos2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_LeerCampos2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout CamposLayout = new javax.swing.GroupLayout(Campos);
         Campos.setLayout(CamposLayout);
         CamposLayout.setHorizontalGroup(
@@ -489,8 +497,10 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(CamposLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_GuardarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_CrearCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
+                    .addComponent(jb_LeerCampos2, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                    .addGroup(CamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jb_GuardarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_CrearCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CamposLayout.setVerticalGroup(
@@ -502,7 +512,9 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(bt_CrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_GuardarCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(529, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_LeerCampos2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(432, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Campos, "card2");
@@ -512,7 +524,12 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel3.setText("Registros");
 
-        jButton2.setText("jButton2");
+        jb_GuardarRegistro.setText("Guardar Registro");
+        jb_GuardarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_GuardarRegistroMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout RegistrosLayout = new javax.swing.GroupLayout(Registros);
         Registros.setLayout(RegistrosLayout);
@@ -524,8 +541,8 @@ public class MainGUI extends javax.swing.JFrame {
                         .addGap(345, 345, 345)
                         .addComponent(jLabel3))
                     .addGroup(RegistrosLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jButton2)))
+                        .addGap(49, 49, 49)
+                        .addComponent(jb_GuardarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(388, Short.MAX_VALUE))
         );
         RegistrosLayout.setVerticalGroup(
@@ -533,9 +550,9 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(RegistrosLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel3)
-                .addGap(140, 140, 140)
-                .addComponent(jButton2)
-                .addContainerGap(569, Short.MAX_VALUE))
+                .addGap(74, 74, 74)
+                .addComponent(jb_GuardarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(578, Short.MAX_VALUE))
         );
 
         PanelCambio.add(Registros, "card2");
@@ -869,6 +886,18 @@ public class MainGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_GuardarCMouseClicked
 
+    private void jb_GuardarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarRegistroMouseClicked
+        //AQUI ES PARA ESCRIBIR UN REGISTRO
+        
+        
+    }//GEN-LAST:event_jb_GuardarRegistroMouseClicked
+
+    private void jb_LeerCampos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LeerCampos2MouseClicked
+        //Aqui leemos los cmapos usando delimeter
+        
+        
+    }//GEN-LAST:event_jb_LeerCampos2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -928,7 +957,6 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JButton bt_CrearArchivo;
     private javax.swing.JButton bt_CrearCampo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -944,7 +972,9 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JButton jb_AgregarCampo;
     private javax.swing.JButton jb_GuardarC;
     private javax.swing.JButton jb_GuardarCampos;
+    private javax.swing.JButton jb_GuardarRegistro;
     private javax.swing.JButton jb_LeerCampos;
+    private javax.swing.JButton jb_LeerCampos2;
     private javax.swing.JButton jb_LlavePrimaria;
     private javax.swing.JDialog jd_NuevoCampo;
     private javax.swing.JList<Campos> jl_Campos;

@@ -718,8 +718,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jb_GuardarCampos" max="32767" attributes="0"/>
-                              <Component id="bt_CrearCampo" pref="293" max="32767" attributes="0"/>
+                              <Component id="jb_LeerCampos2" pref="293" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jb_GuardarCampos" max="32767" attributes="0"/>
+                                  <Component id="bt_CrearCampo" pref="293" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -734,7 +737,9 @@
                           <Component id="bt_CrearCampo" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jb_GuardarCampos" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace pref="529" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jb_LeerCampos2" min="-2" pref="79" max="-2" attributes="0"/>
+                          <EmptySpace pref="432" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -765,6 +770,14 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_GuardarCamposMouseClicked"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="jb_LeerCampos2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Leer los campos"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_LeerCampos2MouseClicked"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Registros">
@@ -784,13 +797,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="jb_GuardarRegistro" min="-2" pref="246" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="388" max="32767" attributes="0"/>
@@ -802,9 +815,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="569" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="jb_GuardarRegistro" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace pref="578" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -818,10 +831,13 @@
                     <Property name="text" type="java.lang.String" value="Registros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="jb_GuardarRegistro">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jButton2"/>
+                    <Property name="text" type="java.lang.String" value="Guardar Registro"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_GuardarRegistroMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
