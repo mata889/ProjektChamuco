@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -894,8 +895,13 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void jb_LeerCampos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LeerCampos2MouseClicked
         //Aqui leemos los cmapos usando delimeter
-        
-        
+        StringTokenizer tokens;
+        String cadena = "";
+        String cadena2 = "";
+        tokens = new StringTokenizer(cadena,",");
+        while(tokens.hasMoreTokens()){
+            cadena2 = cadena2+": "+tokens.nextToken();
+        }
     }//GEN-LAST:event_jb_LeerCampos2MouseClicked
 
     /**
