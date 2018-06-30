@@ -399,7 +399,7 @@ public class MaynGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No se ha creado un archivo");
 
         } else try {
-            if (br.readLine()==null) {
+            if (br.readLine()!=null) {
                 JOptionPane.showMessageDialog(this, "Ya existe Los Campos");
             } else {
                 AgregarCampos.pack();
