@@ -67,7 +67,6 @@ public class MaynGUI extends javax.swing.JFrame {
         Exit = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         CrearCampos = new javax.swing.JMenuItem();
-        GuardarCampos = new javax.swing.JMenuItem();
         ListarCampos = new javax.swing.JMenuItem();
         ModificarCampos = new javax.swing.JMenuItem();
         BorrarCampos = new javax.swing.JMenuItem();
@@ -229,14 +228,6 @@ public class MaynGUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(CrearCampos);
-
-        GuardarCampos.setText("Guardar Campos");
-        GuardarCampos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarCamposActionPerformed(evt);
-            }
-        });
-        jMenu1.add(GuardarCampos);
 
         ListarCampos.setText("Listar Campos");
         ListarCampos.addActionListener(new java.awt.event.ActionListener() {
@@ -464,16 +455,6 @@ public class MaynGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_GuardarCMouseClicked
 
-    private void GuardarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCamposActionPerformed
-
-        if (ArchivoActual == null) {
-            JOptionPane.showMessageDialog(this, "No se ha creado un archivo");
-        } else {
-            DefaultListModel modelo = (DefaultListModel) jl_Campos.getModel();
-
-        }
-    }//GEN-LAST:event_GuardarCamposActionPerformed
-
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_ExitActionPerformed
@@ -550,7 +531,6 @@ public class MaynGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem Exit;
     private javax.swing.JMenuItem ExportarExcel;
     private javax.swing.JMenuItem ExportarXML;
-    private javax.swing.JMenuItem GuardarCampos;
     private javax.swing.JMenuItem IntroducirRegistros;
     private javax.swing.JMenuItem ListarCampos;
     private javax.swing.JMenuItem ListarRegistros;
