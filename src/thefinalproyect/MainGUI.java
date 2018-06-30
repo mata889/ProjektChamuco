@@ -808,9 +808,25 @@ public class MainGUI extends javax.swing.JFrame {
                 }
             }
         }*/
-        if (ArchivoActual != null) {
-            DefaultListModel modelo = (DefaultListModel) jl_Campos.getModel();
-
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            String cadena = "";
+            fw = new FileWriter(ArchivoActual);
+            bw = new BufferedWriter(fw);
+            if (ArchivoActual != null) {
+                System.out.println("Entro if");
+                DefaultListModel modelo = (DefaultListModel) jl_Campos.getModel();
+                for (int i = 0; i < modelo.getSize(); i++) {
+                    cadena += modelo.get(i).toString();
+                    System.out.println(modelo.get(i).toString());
+                }
+                System.out.println(modelo.getSize());
+                bw.write(cadena);
+                bw.flush();
+            }
+        } catch (Exception e) {
+            System.out.println("Tiro algun error");
         }
     }//GEN-LAST:event_jb_GuardarCamposMouseClicked
 
@@ -874,10 +890,11 @@ public class MainGUI extends javax.swing.JFrame {
                     bw.write(CL.toString());
                 }
                 bw.flush();
-                try{
+                try {
                     fw.close();
                     bw.close();
-                }catch(Exception Ex){}
+                } catch (Exception Ex) {
+                }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(Campos, "Esto se fue a la mier**");
             }
@@ -889,8 +906,8 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void jb_GuardarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarRegistroMouseClicked
         //AQUI ES PARA ESCRIBIR UN REGISTRO
-        
-        
+
+
     }//GEN-LAST:event_jb_GuardarRegistroMouseClicked
 
     private void jb_LeerCampos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LeerCampos2MouseClicked
@@ -899,10 +916,12 @@ public class MainGUI extends javax.swing.JFrame {
         StringTokenizer tokens2;
         String cadena = "";
         String cadena2 = "";
-        tokens = new StringTokenizer(cadena,"|");
-        tokens2 = new StringTokenizer(cadena,";git statuis");
-        while(tokens.hasMoreTokens()){
-            cadena2 = cadena2+": "+tokens.nextToken();
+        tokens = new StringTokenizer(cadena, ";");
+        tokens2 = new StringTokenizer(cadena, "|");
+        while (tokens.hasMoreTokens()) {
+            cadena = tokens.nextToken();
+            cadena2 = tokens2.nextToken(cadena);
+            System.out.println(cadena2);
         }
     }//GEN-LAST:event_jb_LeerCampos2MouseClicked
 
