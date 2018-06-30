@@ -896,9 +896,11 @@ public class MainGUI extends javax.swing.JFrame {
     private void jb_LeerCampos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_LeerCampos2MouseClicked
         //Aqui leemos los cmapos usando delimeter
         StringTokenizer tokens;
+        StringTokenizer tokens2;
         String cadena = "";
         String cadena2 = "";
-        tokens = new StringTokenizer(cadena,",");
+        tokens = new StringTokenizer(cadena,"|");
+        tokens2 = new StringTokenizer(cadena,";git statuis");
         while(tokens.hasMoreTokens()){
             cadena2 = cadena2+": "+tokens.nextToken();
         }
